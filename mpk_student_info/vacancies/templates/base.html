@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/base_style.css' %}">
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <div class="header">
+        <div class="header_logo_and_nav">
+            <img src="{% static  'img/logo.svg' %}">
+            <a href="{% url 'vacancies' %}" class="nav_item">Вакансии для выпускников</a>
+        </div>
+        <div class="header_account">
+            <span class="hello_text">Здравствуйте, Денис</span>
+            <a href="#" class="exit_account">Выйти</a>
+        </div>
+    </div>
+    
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="footer_container">
+            <img src="{% static  'img/logo.svg' %}">
+            <span>Многопрофильный колледж при ТИУ</span> <br>
+            <span>Сервис для выпускников и работодателей</span>
+        </div>
+    </footer>
+</body>
+</html>
