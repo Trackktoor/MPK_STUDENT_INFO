@@ -10,16 +10,18 @@
 
 {% block content %}
     <div class="container">
+        {% for vacancy in vacancies %}
         <div class="container_item">
             <div class="special">
-                СПЕЦИАЛЬНОСТЬ
+                {{ vacancy.Speciality.SpecialityName }}
             </div>
             <div class="info">
-                <span>Компания: компания</span>
-                <span>Номер телефона: 8 999 999 99 99</span>
-                <span>ЗП: договорная</span>
-                <span>Дата добавления: 2020-07-07</span>
+                <span>Компания: {{ vacancy.Company.CompanyName }}</span>
+                <span>Номер телефона: {{ vacancy.Company.PhoneNumber }}</span>
+                <span>ЗП: {{ vacancy.Salary }}</span>
+                <span>Дата добавления: {{ vacancy.CreatedDate }}</span>
             </div>
         </div>
+        {% endfor %}
     </div>
 {% endblock %}
